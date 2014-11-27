@@ -2,6 +2,7 @@
 #include "opencv2\core\core.hpp"
 #include "opencv2\imgproc\imgproc.hpp"
 #include "opencv2\highgui\highgui.hpp"
+#include "opencv2\features2d\features2d.hpp"
 
 #define w 400
 
@@ -26,6 +27,8 @@ int main( void ){
   /// Create black empty images
   Mat atom_image = Mat::zeros( w, w, CV_8UC3 );
   Mat rook_image = Mat::zeros( w, w, CV_8UC3 );
+
+  BFMatcher bf_matcher(NORM_L2);
 
   /// 1. Draw a simple atom:
   /// -----------------------
